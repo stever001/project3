@@ -1,0 +1,23 @@
+/* BackgroundSlider.css */
+
+/* Ensure BackgroundSlider covers the entire background */
+.background-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure BackgroundSlider is behind other content */
+  }
+  
+  /* Ensure images in BackgroundSlider cover the entire background */
+  .background-slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:  cover; /* Resize image to fit within the container, maintaining aspect ratio (if possible) */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
