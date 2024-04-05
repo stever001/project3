@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import BackgroundSlider from './components/BackgroundSlider/BackgroundSlider.js'; // Step 2: Import BackgroundSlider
+// import AboutUs from './AboutUs'; // Import AboutUs component
+import Contact from './components/Contact/Contact'; // Import Contact component
 
 function App() {
   return (
     <div className="App">
+      <BackgroundSlider /> {/* Step 3: Include BackgroundSlider here */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* Menu Bar */}
+        <nav className="App-menu">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+        <img src={process.env.PUBLIC_URL + './assets/trans-logo.png'} className="App-logo" alt="HealthSync Logo" />
+        <h1>Welcome to HealthSync</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Syncing Lives, One Beat at a Time.
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
+          href="#"
           rel="noopener noreferrer"
         >
-          Learn React
+          Schedule an appointment today!
         </a>
       </header>
+      {/* Add other components like MainContent, Footer, etc. */}
     </div>
   );
 }

@@ -1,5 +1,36 @@
+/* App.css */
+
+/* Remove background color set for the entire app */
+body {
+  background-color: transparent !important;
+}
+
+/* Ensure BackgroundSlider covers the entire background */
+.background-slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure BackgroundSlider is behind other content */
+}
+
+/* Ensure images in BackgroundSlider cover the entire background */
+.background-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Other styles for the overall layout and components */
 .App {
   text-align: center;
+  color: #212124; /* Dark text color for better readability */
 }
 
 .App-logo {
@@ -14,7 +45,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #00adff;*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,14 +56,67 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #fcfcfc;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border: 1px solid #61dafb;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-link:hover, .App-link:focus {
+  background-color: #87e2fb;
+  color: #fff;
+}
+
+/* Ensures the menu bar stretches fully across and sticks to the top */
+.App-menu {
+  width: 100%;
+  background-color: #0b588f;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.App-menu ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.App-menu li {
+  flex: 1;
+  border-right: 1px solid #fff;
+}
+
+.App-menu li:last-child {
+  border-right: none;
+}
+
+.App-menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px 0;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.App-menu li a:hover, .App-menu li a:focus {
+  background-color: #073c61;
+  color: white;
+}
+
+/* Other content should start below the menu bar */
+.App-header {
+  padding-top: 50px;
 }
