@@ -3,7 +3,7 @@
 export function login(email, password) {
     // Send login request to the server
     // Make a POST request to the server's login endpoint with user credentials
-  return fetch('/api/login', {
+  return fetch('/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
