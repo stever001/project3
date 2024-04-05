@@ -1,14 +1,13 @@
-// tests/components/LoginForm.test.js
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import LoginForm from '../src/components/LoginForm';
+import { render, fireEvent, screen } from '@testing-library/react';
+import LoginForm from './LoginForm';
 
 test('renders login form', () => {
-  const { getByPlaceholderText, getByText } = render(<LoginForm />);
+  render(<LoginForm />);
   
-  const emailInput = getByPlaceholderText('Email');
-  const passwordInput = getByPlaceholderText('Password');
-  const loginButton = getByText('Login');
+  const emailInput = screen.getByPlaceholderText('Email');
+  const passwordInput = screen.getByPlaceholderText('Password');
+  const loginButton = screen.getByText('Login');
 
   expect(emailInput).toBeInTheDocument();
   expect(passwordInput).toBeInTheDocument();
@@ -16,5 +15,19 @@ test('renders login form', () => {
 });
 
 test('submits form with valid credentials', () => {
-  // Write your test logic here
+  const mockLogin = jest.fn();
+  render(<LoginForm onSubmit={mockLogin} />);
+  
+  const emailInput = screen.getByPlaceholderText('Email');
+  const passwordInput = screen.getByPlaceholderText('Password');
+  const loginButton = screen.getByText('Login');
+
+  fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+  fireEvent.change(passwordInput, { target: { value: 'password123' } });
+  fireEvent.click(loginButton);
+
+  expect(mockLogin).toHaveBeenCalledWith({
+    email: 'test@example.com',
+    password: 'password123',
+  });
 });
