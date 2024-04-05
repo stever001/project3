@@ -1,74 +1,17 @@
-<div class="ui four cards">
-  <div class="card">
-    <div class="image">
-      <img/>
+import React from 'react';
+// Import the default export
+import CardComponent from '../CardComponent/CardComponent';
+
+// Or if you used named export, you would import like this:
+// import { CardComponent } from '../CardComponent/CardComponent';
+
+const AboutUs = () => {
+  return (
+    <div>
+      {/* ... other AboutUs content ... */}
+      <CardComponent />
     </div>
-    <div class="extra">
-      Rating:
-      <div class="ui star rating" data-rating="4"></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img/>
-    </div>
-    <div class="extra">
-      Rating:
-      <div class="ui star rating" data-rating="2"></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img/>
-    </div>
-    <div class="extra">
-      Rating:
-      <div class="ui star rating" data-rating="3"></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img/>
-    </div>
-    <div class="extra">
-      Rating:
-      <div class="ui star rating" data-rating="4"></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img/>
-    </div>
-    <div class="extra">
-      Rating:
-      <div class="ui star rating" data-rating="3"></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img/>
-    </div>
-    <div class="extra">
-      Rating:
-      <div class="ui star rating" data-rating="3"></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img/>
-    </div>
-    <div class="extra">
-      Rating:
-      <div class="ui star rating" data-rating="4"></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img/>
-    </div>
-    <div class="extra">
-      Rating:
-      <div class="ui star rating" data-rating="4"></div>
-    </div>
-  </div>
-</div>
+  );
+};
+
+export default AboutUs;
