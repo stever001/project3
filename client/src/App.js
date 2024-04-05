@@ -1,3 +1,8 @@
+
+// /src/App.js
+import React from 'react';
+import AboutUs from './components/AboutUs/AboutUs'; // Assuming AboutUs is in the components folder
+
 import React from 'react';
 import './App.css';
 import BackgroundSlider from './components/BackgroundSlider/BackgroundSlider.js'; // Step 2: Import BackgroundSlider
@@ -7,6 +12,10 @@ import Contact from './components/Contact/Contact'; // Import Contact component
 function App() {
   return (
     <div className="App">
+
+      {/* Include the AboutUs component */}
+      <AboutUs />
+
       <BackgroundSlider /> {/* Step 3: Include BackgroundSlider here */}
       <header className="App-header">
         {/* Menu Bar */}
@@ -31,8 +40,12 @@ function App() {
         </a>
       </header>
       {/* Add other components like MainContent, Footer, etc. */}
+
     </div>
   );
 }
 
+
 export default App;
+
+

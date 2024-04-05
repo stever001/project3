@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "specialty": "Cardiology",
+        "description": "Specializing in the diagnosis and treatment of heart conditions and diseases, our cardiologist uses advanced imaging and procedures to care for your cardiovascular health.",
+        "doctor_name": "Dr. Aiden Hart",
+        "doctor_image": "images/m1.jpg"
+    },
+    {
+        "id": 2,
+        "specialty": "Dermatology",
+        "description": "Expert in skin health, our dermatologist offers comprehensive care for a variety of skin conditions, including acne, eczema, and skin cancer, ensuring your skin is healthy and vibrant.",
+        "doctor_name": "Dr. Julia Clarke",
+        "doctor_image": "images/f1.jpg"
+    },
+    {
+        "id": 3,
+        "specialty": "Neurology",
+        "description": "Focused on the nervous system, our neurologist provides expert care for conditions like epilepsy, Parkinson's, and migraines, employing the latest in neurological treatments and research.",
+        "doctor_name": "Dr. Ethan Wright",
+        "doctor_image": "images/m2.jpg"
+    },
+    {
+        "id": 4,
+        "specialty": "Pediatrics",
+        "description": "Dedicated to the health and wellbeing of children from infancy through adolescence, our pediatrician offers preventive care, diagnosis, and treatment for a wide range of childhood illnesses.",
+        "doctor_name": "Dr. Olivia Johnson",
+        "doctor_image": "images/f2.jpg"
+    },
+    {
+        "id": 5,
+        "specialty": "Orthopedics",
+        "description": "Specializing in the musculoskeletal system, our orthopedist treats injuries and diseases affecting bones, joints, ligaments, tendons, and muscles to keep you moving and pain-free.",
+        "doctor_name": "Dr. Noah Lee",
+        "doctor_image": "images/m3.jpg"
+    },
+    {
+        "id": 6,
+        "specialty": "Psychiatry",
+        "description": "Focusing on mental health, our psychiatrist offers compassionate care and treatment for mental illnesses, including depression, anxiety, and bipolar disorder, through therapy and medication.",
+        "doctor_name": "Dr. Amelia Brown",
+        "doctor_image": "images/f3.jpg"
+    },
+    {
+        "id": 7,
+        "specialty": "Gastroenterology",
+        "description": "Expert in digestive health, our gastroenterologist diagnoses and treats conditions affecting the gastrointestinal tract, including IBS, Crohn's disease, and liver disorders.",
+        "doctor_name": "Dr. Lucas Miller",
+        "doctor_image": "images/m4.jpg"
+    },
+    {
+        "id": 8,
+        "specialty": "Obstetrics and Gynecology (OB/GYN)",
+        "description": "Specializing in women's health, our OB/GYN offers comprehensive care through all stages of life, including pregnancy and childbirth, routine exams, and gynecologic surgery.",
+        "doctor_name": "Dr. Mia Wilson",
+        "doctor_image": "images/f4.jpg"
+    }
+]
