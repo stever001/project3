@@ -1,13 +1,16 @@
 
 // /src/App.js
 import React from 'react';
-import AboutUs from './components/AboutUs/AboutUs'; // Assuming AboutUs is in the components folder
+import AboutUs from './components/AboutUs/AboutUs'; 
+// Assuming AboutUs is in the components folder
 
 import React from 'react';
 import './App.css';
-import BackgroundSlider from './components/BackgroundSlider/BackgroundSlider.js'; // Step 2: Import BackgroundSlider
+import BackgroundSlider from './components/BackgroundSlider/BackgroundSlider.js'; 
+// Step 2: Import BackgroundSlider
 // import AboutUs from './AboutUs'; // Import AboutUs component
-import Contact from './components/Contact/Contact'; // Import Contact component
+import Contact from './components/Contact/Contact'; 
+// Import Contact component
 
 function App() {
   return (
