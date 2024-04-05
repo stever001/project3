@@ -1,6 +1,5 @@
 
 // /src/App.js
-import React from 'react';
 import AboutUs from './components/AboutUs/AboutUs'; 
 // Assuming AboutUs is in the components folder
 
