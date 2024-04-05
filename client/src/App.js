@@ -1,55 +1,30 @@
-
 // /src/App.js
-import AboutUs from './components/AboutUs/AboutUs'; 
-// Assuming AboutUs is in the components folder
-import {Outlet } from 'react-router-dom';
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation/Navigation';
+import BackgroundSlider from './components/BackgroundSlider/BackgroundSlider';
+import AboutUs from './components/AboutUs/AboutUs';
+import LoginForm from './components/auth/LoginForm';
+import Contact from './components/Contact/Contact';
+import SignupForm from './components/auth/SignupForm';
+// ... import other components you need routes for
 import './App.css';
-import BackgroundSlider from './components/BackgroundSlider/BackgroundSlider.js'; 
-// Step 2: Import BackgroundSlider
-// import AboutUs from './AboutUs'; // Import AboutUs component
-
-// Import Contact component
 
 function App() {
   return (
     <div className="App">
-
-      {/* Include the AboutUs component */}
-      <Outlet />
-
-      <BackgroundSlider /> {/* Step 3: Include BackgroundSlider here */}
-      <header className="App-header">
-        {/* Menu Bar */}
-        <nav className="App-menu">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Sign Up</a></li>
-          </ul>
-        </nav>
-        <img src={process.env.PUBLIC_URL + './assets/trans-logo.png'} className="App-logo" alt="HealthSync Logo" />
-        <h1>Welcome to HealthSync</h1>
-        <p>
-          Syncing Lives, One Beat at a Time.
-        </p>
-        <a
-          className="App-link"
-          href="#"
-          rel="noopener noreferrer"
-        >
-          Schedule an appointment today!
-        </a>
-      </header>
-      {/* Add other components like MainContent, Footer, etc. */}
-
+      <Navigation /> {/* Include the Navigation component */}
+      <Routes>
+        <Route path="/" element={<AboutUs />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/signup" element={<SignupForm />} />
+        {/* Add other routes as needed */}
+      </Routes>
+      <BackgroundSlider />
+      {/* Your header and other components */}
     </div>
   );
 }
 
-
 export default App;
-
-
