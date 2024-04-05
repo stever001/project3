@@ -2,6 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import AboutUs from './components/AboutUs/AboutUs';
+import LoginForm from './components/auth/LoginForm';
+import Contact from './components/Contact/Contact'; 
+import SignupForm from './components/auth/SignupForm'; 
+
 
 // Adjust the URI to match your server's address and port
 const client = new ApolloClient({
@@ -9,9 +15,20 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
+const router = createBrowserRouter ([{
+  path: '/',
+  element:  <App />,
+  children: [{index: true, element: <AboutUs />}, 
+  {path: 'login', element: <LoginForm />},
+  {path: 'contact', element: <Contact />},
+  {path: 'signup', element: <SignupForm />}
+]}
+
+]);
+
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+     <RouterProvider router = {router}></RouterProvider>
   </ApolloProvider>,
   document.getElementById('root')
 );
