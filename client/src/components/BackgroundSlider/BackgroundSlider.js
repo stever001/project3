@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react';
 import './BackgroundSlider.css'; // Make sure you have the CSS file
 
 const images = [
-  './assets/health2.jpeg',
-  './assets/medical-center.jpeg',
-  './assets/health.jpeg',
+  './assets/slider1.jpg',
+  './assets/slider2.jpg',
+  './assets/slider4.jpg',
+  './assets/slider3.jpg',
+  
   // Add more images as needed
 ];
 
