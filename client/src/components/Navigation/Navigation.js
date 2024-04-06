@@ -1,11 +1,11 @@
-// Navigation.js or NavBar.js
-
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navigation.css'; // Importing Navigation-specific styles
 
+// Added a more specific className for the navigation component
 const Navigation = () => {
   return (
-    <nav className="App-menu">
+    <nav className="custom-app-navigation">
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about-us">About Us</Link></li>
@@ -18,3 +18,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+

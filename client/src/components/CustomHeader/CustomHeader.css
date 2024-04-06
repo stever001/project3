@@ -1,0 +1,36 @@
+.CustomHeader-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  align-items: left;
+  text-align: left;
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10; /* Ensure this z-index is higher than the navigation bar */
+  padding: 0; /* Adjust padding as needed */
+}
+
+.CustomHeader-wrapper h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 2rem; /* Adjust font size as needed */
+  margin: 0;
+  padding-right: 1rem; /* Provides some spacing next to h1, if needed */
+}
+
+/* Update media queries to match the new class */
+@media (max-width: 768px) {
+  .CustomHeader-wrapper {
+    padding: 0.5rem;
+  }
+
+  .CustomHeader-wrapper h1 {
+    font-size: 1.2rem; /* Adjust h1 font size for smaller screens */
+  }
+}
