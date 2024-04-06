@@ -10,6 +10,7 @@ import SignupForm from './components/auth/SignupForm';
 import Home from './components/Home/Home';
 // ... import other components you need routes forB
 import './App.css';
+import { Header } from 'semantic-ui-react';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         {/* Add other routes as needed */}
       </Routes>
       <BackgroundSlider />
+      <Header />
+      
       {/* Your header and other components */}
     </div>
   );
