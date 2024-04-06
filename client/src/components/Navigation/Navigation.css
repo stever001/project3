@@ -1,46 +1,39 @@
-/* Ensures the menu bar stretches fully across and sticks to the top */
-.App-menu {
-    width: 100%;
-    background-color: #0b588f;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .App-menu ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-  
-  .App-menu li {
-    flex: 1;
-    border-right: 1px solid #fff;
-  }
-  
-  .App-menu li:last-child {
-    border-right: none;
-  }
-  
-  .App-menu li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 20px 0;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .App-menu li a:hover, .App-menu li a:focus {
-    background-color: #073c61;
-    color: white;
-  }
-  
+/* Increased specificity by using a unique class name */
+.custom-app-navigation {
+  width: 100%;
+  background-color: #0b588f;
+}
+
+.custom-app-navigation ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-app-navigation li {
+  flex: 1;
+  border-right: 1px solid #fff;
+}
+
+.custom-app-navigation li:last-child {
+  border-right: none;
+}
+
+.custom-app-navigation li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.custom-app-navigation li a:hover,
+.custom-app-navigation li a:focus {
+  background-color: #073c61;
+}
+
