@@ -7,7 +7,8 @@ import AboutUs from './components/AboutUs/AboutUs';
 import LoginForm from './components/auth/LoginForm';
 import Contact from './components/Contact/Contact';
 import SignupForm from './components/auth/SignupForm';
-// ... import other components you need routes for
+import Home from './components/Home/Home';
+// ... import other components you need routes forB
 import './App.css';
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     <div className="App">
       <Navigation /> {/* Include the Navigation component */}
       <Routes>
-        <Route path="/" element={<AboutUs />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<SignupForm />} />
