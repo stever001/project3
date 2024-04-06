@@ -6,7 +6,7 @@ const images = [
   './assets/slider1.jpg',
   './assets/slider2.jpg',
   './assets/slider4.jpg',
-  './assets/slider3.jpg',
+  './assets/slider5.jpg',
   
   // Add more images as needed
 ];

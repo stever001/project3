@@ -73,9 +73,9 @@
 
 
 h2 {
-  color: white; /* Or any color you prefer */
+  color: rgb(31, 138, 215); /* Or any color you prefer */
   font-size: 3rem;
-  margin-bottom: 3px; /* Space between the h2 and the form */
+  margin-bottom: 5pxpx; /* Space between the h2 and the form */
 }
 
 .contact-form {
