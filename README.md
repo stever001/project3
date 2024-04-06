@@ -8,10 +8,11 @@ HealthSync
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
-- [Tests](#tests)
 - [Questions](#questions)
 
 ## Installation
+***  F o r  D e v e l o p e r s  ***  
+
 1. Clone the repo from stever001/project3. 
 2.  Install Backend Dependencies. Navigate to the root directory of the project and then run ’npm install’. 
 3. Install Frontend Dependencies. Navigate to the ‘/client’ directory and then run ’npm install’. 
@@ -30,6 +31,7 @@ JWT_SECRET=mysecretkey
 This will allow connection to the servers.
 
 ## Usage
+Live URL:
 
 
 ## License
@@ -38,10 +40,12 @@ This will allow connection to the servers.
 This project is licensed under the MIT license.
 
 ## Contributing
+Aaron Cendejas  
+Ruthie Pina  
+Douglas Rouse  
+Steven Rouse  
 
-
-## Tests
 
 
 ## Questions
-For questions, contact steve17rouse@gmail.com. Visit [GitHub](https://github.com/stever001).
+For questions, contact steve17rouse@gmail.com. Visit [GitHub](https://github.com/stever001).. Visit [GitHub](https://github.com/stever001).
