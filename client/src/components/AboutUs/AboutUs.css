@@ -1,0 +1,29 @@
+/* Specific styles for the AboutUs component to ensure specificity and avoid conflicts */
+.about-us-wrapper {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .about-us-content {
+    background-color: #f0f0f0; /* Light gray background for contrast */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px; /* Adjust based on design requirements */
+  }
+  
+  .about-us-heading {
+    color: #333; /* Dark text for the heading */
+    margin-bottom: 0.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem; /* Smaller than homeHeading for differentiation */
+  }
+  
+  .about-us-paragraph {
+    color: rgb(1, 7, 10);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    max-width: 600px;
+    margin: 0 auto 2em; /* Centering the paragraph with margin */
+  }
+  

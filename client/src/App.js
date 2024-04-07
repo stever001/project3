@@ -7,7 +7,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import LoginForm from './components/auth/LoginForm';
 import Contact from './components/Contact/Contact';
 import SignupForm from './components/auth/SignupForm';
-import Home from './components/Home/Home';
+import HomeComponent from './components/HomeComponent/HomeComponent';
 import './App.css';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       
       {/* The main content of your app should be rendered within Routes */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomeComponent />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/contact" element={<Contact />} />
@@ -26,7 +26,14 @@ function App() {
         {/* Add other routes as needed */}
       </Routes>
       
+
       <CustomFooter />  {/* Footer should be at the bottom */}
+=======
+      {/* Other components */}
+      <CustomHeader />
+      
+    
+
     </div>
   );
 }
