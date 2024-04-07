@@ -10,9 +10,6 @@ const ApptSchema = new Schema(
          type: String,
          required: true,
       },
-      apptWith: {
-         type: String,
-      },
       username: {
          type: String,
       },

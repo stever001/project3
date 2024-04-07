@@ -5,8 +5,8 @@ const { GraphQlError } = require('graphql');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-// const secret = "mysecretssshhhhhhh";
-// const expiration = "2h";
+const secret = "mysecretssshhhhhhh";
+const expiration = "2h";
 
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';

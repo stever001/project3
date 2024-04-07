@@ -14,15 +14,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-   mutation addUser($username: String!, $email: String!, $password: String!, $isProvider: Boolean, $specialty: String, $npiNumber: String) {
-      addUser(
-         username: $username
-         email: $email
-         password: $password
-         isProvider: $isProvider
-         specialty: $specialty
-         npiNumber: $npiNumber
-      ) {
+   mutation addUser($username: String!, $email: String!, $password: String!) {
+      addUser(username: $username, email: $email, password: $password) {
          token
          user {
             _id
@@ -33,7 +26,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_APPT = gql`
-   mutation addAppt($username: String, $apptDate: Date!, $apptTime: String!, $apptWith: User!, $confirmed: Boolean!) {
-      addAppt(username: $username, apptDate: $apptDate, apptTime: $apptTime, apptWith: $apptWith, confirmed: $confirmed)
+   mutation addAppt($username: String, $apptDate: Date!, $apptTime: String!, $confirmed: Boolean!) {
+      addAppt(username: $username, apptDate: $apptDate, apptTime: $apptTime, confirmed: $confirmed)
    }
 `;
