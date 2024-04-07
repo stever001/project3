@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ContactForm.css';
+import './ContactForm.css'; // Standard CSS import
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,15 +11,14 @@ function ContactForm() {
 
   useEffect(() => {
     if (submitted) {
-      // Set a timer to reset the form after 5 seconds
       const timer = setTimeout(() => {
-        setSubmitted(false); // Reset the submitted state
-        setFormData({ name: '', email: '', message: '' }); // Clear the form inputs
+        setSubmitted(false);
+        setFormData({ name: '', email: '', message: '' });
       }, 3000);
 
-      return () => clearTimeout(timer); // Cleanup the timer on component unmount
+      return () => clearTimeout(timer);
     }
-  }, [submitted]); // Effect depends on the `submitted` state
+  }, [submitted]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,51 +30,54 @@ function ContactForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here, e.g., sending data to a server
-    // alert('Form submitted!'); // Placeholder for submission action
-    setSubmitted(true); // Set submitted state to true without clearing formData here
+    setSubmitted(true);
   };
 
   return (
-    <div className="form-container">
+    <div className="cf-container"> {/* This className was adjusted for consistency */}
       {submitted ? (
-        <p>Form submitted successfully!</p>
+        <p className="cf-submission-confirmation">Form submitted successfully!</p>
       ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+        <div className="form-container"> {/* Properly applying styles to this container */}
+          <form onSubmit={handleSubmit} className="cf-form">
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="cf-input"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="cf-input"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="cf-textarea"
+              ></textarea>
+            </div>
+            <button type="submit" className="cf-button">Submit</button>
+          </form>
+        </div>
       )}
     </div>
   );
@@ -90,8 +92,3 @@ function ContactFormWrapper() {
 }
 
 export default ContactFormWrapper;
-
-
-
-
-

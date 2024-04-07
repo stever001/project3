@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import './CardComponent.css'; // Your custom styles
 import doctorsData from '../../data/doctors.json'; // Import the JSON data
 
 const CardComponent = () => (

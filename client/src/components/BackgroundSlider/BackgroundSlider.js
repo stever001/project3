@@ -1,13 +1,12 @@
 // BackgroundSlider.js
 import React, { useEffect, useState } from 'react';
-import './BackgroundSlider.css'; // Make sure you have the CSS file
+import './BackgroundSlider.css'; // Standard CSS import
 
 const images = [
   './assets/slider1.jpg',
   './assets/slider2.jpg',
   './assets/slider4.jpg',
-  './assets/slider5.jpg',
-  
+  './assets/slider6.jpg',
   // Add more images as needed
 ];
 
@@ -23,13 +22,13 @@ function BackgroundSlider() {
   }, []);
 
   return (
-    <div className="background-slider">
+    <div className="bs-background-slider">
       {images.map((image, index) => (
         <img
           key={index}
           src={image}
           alt={`Slide ${index}`}
-          style={{ opacity: index === current ? 1 : 0 }}
+          className={index === current ? 'bs-slide bs-slide-active' : 'bs-slide'}
         />
       ))}
     </div>
