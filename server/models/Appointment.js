@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const apptSchema = new Schema(
+const ApptSchema = new Schema(
    {
       apptDate: {
          type: Date,
@@ -28,6 +28,6 @@ const apptSchema = new Schema(
    }
 );
 
-const Appointment = model("Appointment", apptSchema);
+const Appointment = model("Appointment", ApptSchema);
 
 module.exports = Appointment;
