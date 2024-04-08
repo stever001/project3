@@ -41,12 +41,17 @@
   font-size: 5rem; /* Increase the font size */
   color: white;
   margin: 0 auto; /* Keeps it centered */
-  position: relative;
-  padding: 0 20px; /* Add padding to make the text wider if needed */
-  display: inline-block; /* Allows padding to take effect and can help with centering */
+  position: relative; /* Allows z-index to work */
+  padding-left: 0 20px; /* Add padding to make the text wider if needed */
+  display: flex; /* Allows padding to take effect and can help with centering */
   max-width: 200%; /* Ensures text does not overflow the header width */
   box-sizing: border-box; /* Includes padding in the element's total width */
-  margin-left: 845px;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Adjustments for responsiveness */
