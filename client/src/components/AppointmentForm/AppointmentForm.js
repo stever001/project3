@@ -1,3 +1,4 @@
+
 //* PLS DONT DELETE
 // import React, { useState } from "react";
 // import DatePicker from "react-datepicker";
@@ -59,7 +60,7 @@ const AppointmentForm = () => {
    const [apptDate, setApptDate] = useState("");
    const [apptTime, setApptTime] = useState("");
 
-   const [createAppointment] = useMutation(CREATE_APPT);
+   const [createAppointment, { error }] = useMutation(CREATE_APPT);
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -71,7 +72,6 @@ const AppointmentForm = () => {
                apptTime,
             },
          });
-         // Clear form fields after successful submission
          setUsername("");
          setApptDate("");
          setApptTime("");
@@ -99,6 +99,22 @@ const AppointmentForm = () => {
                <button type="submit">Create Appointment</button>
             </form>
          </div>
+      <div className="apptForm-container">
+         <form className="apptForm-form" onSubmit={handleSubmit}>
+            <label className="apptForm-group">
+               Username:
+               <input className="apptForm-input" type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+            </label>
+            <label className="apptForm-group">
+               Date:
+               <input className="apptForm-input" type="date" value={apptDate} onChange={(e) => setApptDate(e.target.value)} required />
+            </label>
+            <label className="apptForm-group">
+               Time:
+               <input className="apptForm-input" type="time" value={apptTime} onChange={(e) => setApptTime(e.target.value)} required />
+            </label>
+            <button className="apptForm-button" type="submit">Create Appointment</button>
+         </form>
       </div>
    );
 };
