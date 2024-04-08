@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-const { Date } = require("graphql-scalars");
+// const { Date } = require("graphql-scalars");
 
 export const LOGIN_USER = gql`
    mutation login($email: String!, $password: String!) {
@@ -26,7 +26,19 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_APPT = gql`
-   mutation addAppt($username: String, $apptDate: Date!, $apptTime: String!, $confirmed: Boolean!) {
-      addAppt(username: $username, apptDate: $apptDate, apptTime: $apptTime, confirmed: $confirmed)
+   mutation addAppt($username: String, $apptDate: Date!, $apptTime: String!) {
+      addAppt(username: $username, apptDate: $apptDate, apptTime: $apptTime)
+   }
+`;
+
+// import { gql } from "@apollo/client";
+
+export const CREATE_APPT = gql`
+   mutation createAppointment($username: String!, $apptDate: String!, $apptTime: String!) {
+      createAppointment(username: $username, apptDate: $apptDate, apptTime: $apptTime) {
+         id
+         date
+         time
+      }
    }
 `;
