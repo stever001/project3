@@ -1,22 +1,22 @@
-// /server/schemas/typeDefs.js
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+  type Mutation {
+    signUp(email: String!, password: String!): AuthResponse!
+    login(email: String!, password: String!): AuthResponse!
+  }
+
   type User {
-    id: ID!
-    username: String!
-    email: String!
+    username: String
+    email: String
   }
 
   type Query {
-    message: String
-    users: [User]
+me: User
   }
-
-  type Mutation {
-    createUser(username: String!, email: String!): User
+  type AuthResponse {
+    token: String
   }
 `;
 
 module.exports = typeDefs;
-               
