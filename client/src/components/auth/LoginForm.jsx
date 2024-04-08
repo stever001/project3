@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './LoginForm.css';
+import {useMutation}  from '@apollo/client';
+import {ADD_USER , LOGIN_USER}  from "../../utils/mutations.js";
 
 function Authentication() {
   const [email, setEmail] = useState('');
@@ -9,6 +11,7 @@ function Authentication() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
   const [isLoginMode, setIsLoginMode] = useState(true);
+  const [addUser]= useMutation(ADD_USER);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,15 +26,8 @@ function Authentication() {
         console.log('Login successful:', response.data);
         // Redirect user to dashboard or another page
       } else {
-        // Make API request to create a new user
-        const response = await axios.post('/signup', {
-          email,
-          password,
-          confirmPassword,
-        });
-        // Handle success response
-        console.log('Signup successful:', response.data);
-        // Redirect user to dashboard or another page
+       const {data} = await  addUser({variables:{email, password}});
+       console.log(data);
       }
     } catch (err) {
       // Handle error response

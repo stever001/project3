@@ -1,34 +1,18 @@
 import { gql } from "@apollo/client";
-const { Date } = require("graphql-scalars");
 
 export const LOGIN_USER = gql`
-   mutation login($email: String!, $password: String!) {
-      login(email: $email, password: $password) {
-         token
-         user {
-            _id
-            username
-         }
-      }
+mutation Mutation($email: String!, $password: String!) {
+   login(email: $email, password: $password) {
+     token
    }
+ }
 `;
 
 export const ADD_USER = gql`
-   mutation addUser($username: String!, $email: String!, $password: String!, $isProvider: Boolean, $specialty: String, $npiNumber: String) {
-      addUser(
-         username: $username
-         email: $email
-         password: $password
-         isProvider: $isProvider
-         specialty: $specialty
-         npiNumber: $npiNumber
-      ) {
-         token
-         user {
-            _id
-            username
-         }
-      }
+mutation SignUp($email: String!, $password: String!) {
+   signUp(email: $email, password: $password) {
+     token}
+     
    }
 `;
 
