@@ -16,13 +16,16 @@ const SelectDate = (props) => {
       });
    };
 
-   //    const handleCalendarClose = () => console.log("Calendar closed");
-   //    const handleCalendarOpen = () => console.log("Calendar opened");
+   const handleCalendarClose = () => console.log("Calendar closed");
+   const handleCalendarOpen = () => console.log("Calendar opened");
 
    return (
       <div className="card login-signup-card shadow-sm">
          <div className="card-body">
             <h1>Select Date</h1>
+            {/* <p className="text-selectdate"> */}//*SHOULD I MAKE SPECIALTY SCHEMA?
+            {/* Specialty: <span>{selectDateState.specialty}</span> */}
+            {/* </p> */}
          </div>
          <span>Check Availability</span>
          <div className="create-appt" style={{ display: "flex", alignItems: "center" }}>
@@ -33,6 +36,7 @@ const SelectDate = (props) => {
                onCalendarOpen={handleCalendarOpen}
             />
             <Link to={`/timeavailable/${selectDateState.date}`}>
+               //*IS THIS CORRECT
                <button className="btn btn-add">submit</button>
             </Link>
          </div>

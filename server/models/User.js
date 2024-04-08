@@ -11,7 +11,7 @@
 
 //* RUTHIE CODE FOR USER MODEL/SCHEMA
 const { Schema, model } = require("mongoose");
-const dateFormat = require("../utils/dateFormat");
+// const dateFormat = require("../utils/dateFormat");
 const bcrypt = require("bcrypt");
 const Appointment = require("./Appointment");
 
@@ -44,11 +44,12 @@ const UserSchema = new Schema(
    {
       toJSON: {
          virtuals: true,
-         getters: true,
+         getters: true, //*do i need this line?
       },
    }
 );
 
+//* sets up pre save middleware to create password
 UserSchema.pre("save", async function (next) {
    if (this.isNew || this.isModified("password")) {
       const saltRounds = 10;

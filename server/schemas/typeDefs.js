@@ -1,6 +1,8 @@
 // /server/schemas/typeDefs.js
+//* imports the gql tagged template function
 const { gql } = require("apollo-server-express");
 
+//* create our typeDefs
 const typeDefs = gql`
    scalar Date
 
@@ -15,7 +17,6 @@ const typeDefs = gql`
       username: String
       apptDate: Date
       apptTime: String
-      apptWith: String
       confirmed: Boolean
    }
 
@@ -23,13 +24,13 @@ const typeDefs = gql`
       me: User
       users: [User]
       user(username: String!): User
-      getAppointments(username: String!): [Appointment]
+      getAppointments(username: String!, apptDate: Date!): [Appointment]
    }
 
    type Mutation {
       login(email: String!, password: String!): Auth
       addUser(username: String!, email: String!, password: String!): Auth
-      addAppt(username: String, apptDate: Date!, apptTime: String!, apptWith: String, confirmed: Boolean!): Appointment
+      addAppt(username: String, apptDate: Date!, apptTime: String!, confirmed: Boolean!): Appointment
    }
 
    type Auth {

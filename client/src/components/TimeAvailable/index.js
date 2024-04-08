@@ -44,7 +44,7 @@ const TimeAvailable = (props) => {
       });
    }
 
-   // submit form
+   //* submit form
    const handleClick = async (timeState, availableSlot) => {
       try {
          console.log("timeState, availableSlot", timeState, availableSlot);
@@ -52,7 +52,6 @@ const TimeAvailable = (props) => {
             variables: {
                apptDate: timeState.date,
                apptTime: availableSlot,
-               apptWidth: timeState.provider,
                confirmed: true,
             },
          });

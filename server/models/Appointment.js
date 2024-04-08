@@ -12,6 +12,7 @@ const ApptSchema = new Schema(
       },
       username: {
          type: String,
+         required: true,
       },
       confirmed: {
          type: Boolean,
