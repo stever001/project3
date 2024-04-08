@@ -37,6 +37,7 @@
    gap: 10px;
    max-width: 400px;
 }
+} /* Add closing curly brace here */
 
 .apptForm-input,
 .apptForm-textarea {
