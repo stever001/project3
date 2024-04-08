@@ -1,36 +1,66 @@
 .CustomHeader-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack children vertically */
   justify-content: space-between;
-  height: 150px;
-  align-items: left;
-  text-align: left;
-  background-color: black;
+  height: auto; /* You may need to adjust this if you need more space */
+  background-color: #073252;
   color: white;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  z-index: 10; /* Ensure this z-index is higher than the navigation bar */
-  padding: 0; /* Adjust padding as needed */
+  z-index: 10;
 }
 
-.CustomHeader-wrapper h1 {
+.header-top {
+  display: flex;
+  justify-content: flex-start; /* Aligns items to the start of the container */
+  align-items: center; /* Centers items vertically */
+  height: 150px; /* Fixed height to prevent resizing */
+  margin-bottom: 0; /* Set to 0 or any specific value you need */
+  overflow: visible; /* Allows the logo to overflow this container if needed */
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo a img {
+  height: 200px; /* Adjust the height as needed, but keep it proportional to your space. */
+  width: 250px; /* You can also set a specific width, depending on the logo's aspect ratio. */
+  max-width: 300px; /* Override any max-width constraints. */
+  max-height: 400px; /* Override any max-height constraints. */
+  margin-top: 30px;
+}
+
+.header-title {
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 100;
-  font-size: 2rem; /* Adjust font size as needed */
-  margin: 0;
-  padding-right: 1rem; /* Provides some spacing next to h1, if needed */
+  font-weight: 700; /* Make it bolder */
+  font-size: 5rem; /* Increase the font size */
+  color: white;
+  margin: 0 auto; /* Keeps it centered */
+
+  position: relative; /* Allows z-index to work */
+  padding-left: 0 20px; /* Add padding to make the text wider if needed */
+  display: flex; /* Allows padding to take effect and can help with centering */
+  max-width: 200%; /* Ensures text does not overflow the header width */
+  box-sizing: border-box; /* Includes padding in the element's total width */
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+
 }
 
-/* Update media queries to match the new class */
+/* Adjustments for responsiveness */
 @media (max-width: 768px) {
-  .CustomHeader-wrapper {
-    padding: 0.5rem;
-  }
-
-  .CustomHeader-wrapper h1 {
-    font-size: 1.2rem; /* Adjust h1 font size for smaller screens */
+  .header-title {
+    font-size: 2rem; /* Smaller font size on smaller screens */
   }
 }
+/* Ensure Navigation styles so that it stays at the bottom of the header */
+/* Your existing media queries and other styles can remain the same */
