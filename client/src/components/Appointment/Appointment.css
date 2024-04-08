@@ -1,26 +1,36 @@
-/* Styles specific to the Contact component */
-.contact-container {
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   align-items: center;
-   padding-top: 25vh;
-   min-height: 100vh;
-   width: 100%;
-   background-color: #ffffff;
+/* Styles specific to the Appointment component */
+.appointment-wrapper {
+   margin-top: 200px;
+   padding: 50px;
+   text-align: center;
+   position: relative;
 }
 
-.contact-heading {
+.appointment-container {
+   border-radius: 8px;
+   margin-bottom: 20px; /* Space between cards */
+   padding: 20px;
+   margin-bottom: 50px auto;
+   max-width: auto; /* Adjust based on design requirements */
+   position: relative;
+   z-index: 10;
+   display: flex; /* Added */
+   flex-direction: column; /* Added */
+   align-items: center; /* Added */
+}
+
+.appointment-heading {
    /* Updated class selector */
    color: rgb(2, 7, 18); /* Specific color */
    font-size: 4rem; /* Large heading size */
+   margin-top: 20px;
    margin-bottom: 20px; /* Spacing below the heading */
    position: relative;
    z-index: 10;
 }
 
 /* Button styles specific to this component */
-.contact-container button {
+.appointment-container button {
    cursor: pointer;
    padding: 10px 20px;
    background-color: #007bff;
@@ -30,6 +40,6 @@
    transition: background-color 0.2s;
 }
 
-.contact-container button:hover {
+.appointment-container button:hover {
    background-color: #279acc;
 }
