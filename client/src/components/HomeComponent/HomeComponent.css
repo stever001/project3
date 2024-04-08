@@ -12,7 +12,7 @@
     color: #333;
     font-size: 4.5rem;
     position: relative;
-    z-index: 10;
+   
   }
   
   .homeParagraph {
@@ -22,7 +22,7 @@
     max-width: 600px;
     margin: 0 auto 2em; /* Centering the paragraph */
     position: relative;
-    z-index: 10;
+    
   }
   
   /* Modal button - assuming it inherits these styles through props or global classname definitions */
