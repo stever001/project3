@@ -4,9 +4,9 @@ import CustomHeader from './components/CustomHeader/CustomHeader';
 import CustomFooter from './components/CustomFooter/CustomFooter'; // Make sure to create this component
 import BackgroundSlider from './components/BackgroundSlider/BackgroundSlider';
 import AboutUs from './components/AboutUs/AboutUs';
-import LoginForm from './components/auth/LoginForm';
+import LoginForm from './components/auth/LoginForm'; // Corrected import path
 import Contact from './components/Contact/Contact';
-import SignupForm from './components/auth/SignupForm';
+// import SignupForm from './components/auth/SignupForm';
 import HomeComponent from './components/HomeComponent/HomeComponent';
 import './App.css';
 
@@ -22,7 +22,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/signup" element={<SignupForm />} />
+        {/* <Route path="/signup" element={<SignupForm />} /> */} {/* Uncomment or remove this line as needed */}
         {/* Add other routes as needed */}
       </Routes>
       
