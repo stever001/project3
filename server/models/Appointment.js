@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const apptSchema = new Schema(
+const ApptSchema = new Schema(
    {
       apptDate: {
          type: Date,
@@ -10,11 +10,9 @@ const apptSchema = new Schema(
          type: String,
          required: true,
       },
-      apptWith: {
-         type: String,
-      },
       username: {
          type: String,
+         required: true,
       },
       confirmed: {
          type: Boolean,
@@ -28,6 +26,6 @@ const apptSchema = new Schema(
    }
 );
 
-const Appointment = model("Appointment", apptSchema);
+const Appointment = model("Appointment", ApptSchema);
 
 module.exports = Appointment;
