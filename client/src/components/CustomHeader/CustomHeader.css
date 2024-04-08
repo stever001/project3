@@ -41,6 +41,7 @@
   font-size: 5rem; /* Increase the font size */
   color: white;
   margin: 0 auto; /* Keeps it centered */
+
   position: relative; /* Allows z-index to work */
   padding-left: 0 20px; /* Add padding to make the text wider if needed */
   display: flex; /* Allows padding to take effect and can help with centering */
@@ -52,6 +53,7 @@
   left: 0;
   width: 100%;
   box-sizing: border-box;
+
 }
 
 /* Adjustments for responsiveness */
