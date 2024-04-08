@@ -19,7 +19,7 @@ function App() {
       {/* The main content of your app should be rendered within Routes */}
       <Routes>
         <Route path="/" element={<HomeComponent />} />
-        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<SignupForm />} />
