@@ -7,7 +7,7 @@ const HomeComponent = () => {
     
       <div className="homeContent"> 
         <h1 className="homeHeading">Welcome to HealthSync</h1>
-        <p className="homeParagraph">Synch up with our world-class team of healthcare providers
+        <p className="homeParagraph">Sync up with our world-class team of healthcare providers
          </p>
         <ModalComponent />
       </div>
