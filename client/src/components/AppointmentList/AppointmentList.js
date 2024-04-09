@@ -3,11 +3,11 @@ import "./AppointmentList.css";
 import React, { useState, useEffect } from "react";
 
 function ListAppointment() {
-   //    State to store the data from local storage
+   //*State to store the data from local storage
    const [data, setData] = useState([]);
-   // State to track the appointment being edited
+   //*State to track the appointment being edited
    const [editingAppointment, setEditingAppointment] = useState(null);
-   // State to store the updated appointment details
+   //*State to store the updated appointment details
    const [updatedAppointment, setUpdatedAppointment] = useState({
       username: "",
       apptDate: "",
@@ -15,7 +15,7 @@ function ListAppointment() {
    });
 
    useEffect(() => {
-      // Function to retrieve data from local storage
+      //*Function to retrieve data from local storage
       const fetchDataFromLocalStorage = () => {
          const localStorageData = localStorage.getItem("appointments");
          if (localStorageData) {
@@ -25,30 +25,30 @@ function ListAppointment() {
       };
 
       fetchDataFromLocalStorage();
-   }, []); // Runs only once after the component mounts
+   }, []); //* Runs only once after the component mounts
 
    console.log("data:", data);
 
-   // Function to delete an appt
+   //*Function to delete an appt
    const deleteAppointment = (username) => {
       const updatedData = data.filter((item) => item.username !== username);
       localStorage.setItem("appointments", JSON.stringify(updatedData));
       setData(updatedData);
    };
 
-   // Function to handle editing an appointment
+   //*Function to handle editing an appointment
    const editAppointment = (appointment) => {
       setEditingAppointment(appointment);
       setUpdatedAppointment(appointment);
    };
 
-   // Function to handle changes in the form inputs
+   //*Function to handle changes in the form inputs
    const handleInputChange = (event) => {
       const { name, value } = event.target;
       setUpdatedAppointment((prevState) => ({ ...prevState, [name]: value }));
    };
 
-   // Function to update an appointment
+   //*Function to update an appointment
    const updateAppointment = () => {
       const updatedData = data.map((item) => (item.username === editingAppointment.username ? updatedAppointment : item));
       localStorage.setItem("appointments", JSON.stringify(updatedData));

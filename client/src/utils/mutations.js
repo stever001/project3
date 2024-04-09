@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-// const { Date } = require("graphql-scalars");
 
 export const LOGIN_USER = gql`
    mutation login($email: String!, $password: String!) {
@@ -31,7 +30,6 @@ export const ADD_APPT = gql`
    }
 `;
 
-// import { gql } from "@apollo/client";
 
 export const CREATE_APPT = gql`
    mutation createAppointment($username: String!, $apptDate: String!, $apptTime: String!) {
