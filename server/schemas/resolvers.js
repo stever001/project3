@@ -1,28 +1,14 @@
-// // /server/resolvers.js
-// const resolvers = {
-//     Query: {
-//       message: () => 'Hello, World!',
-//       users: async () => {
-//         // Logic to retrieve users from your MongoDB database
-//       },
-//     },
-//     Mutation: {
-//       createUser: async (_, { username, email }) => {
-//         // Logic to create a user in your MongoDB database
-//       },
-//     },
-//   };
-
-//   module.exports = resolvers;
-
 //* Import Users and Appointments (like Users and Thoughts from NoSQL challenge?)
 const { User, Appointment } = require("../models");
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const config = require('../config/connection');
 
 //* Import Auth handling
 const { AuthenticationError } = require("apollo-server-express");
 
 //* Import json web token stuff
-const { signToken } = require("../utils/authUtils");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
    Query: {
@@ -43,11 +29,11 @@ const resolvers = {
             .select("-__v -password");
       },
 
-      //* Get a User by username
-      user: async (parent, { username }) => {
-         return User.findOne({ username }) //
-            .select("-__v -password");
-      },
+      // //* Get a User by username
+      // user: async (parent, { username }) => {
+      //    return User.findOne({ username }) //
+      //       .select("-__v -password");
+      // },
       
       //* Get all appointments by username and date
       getAppointments: async (parent, { username }) => {
@@ -56,12 +42,20 @@ const resolvers = {
    },
 
    Mutation: {
-      addUser: async (parent, args) => {
-         const user = await User.create(args);
-         const token = signToken(user);
-
-         return { token, user };
-      },
+      signUp: async (_, { email, password }) => {
+         console.log(email);
+         console.log(password);
+         // Hash password
+         const hashedPassword = await bcrypt.hash(password, 10);
+         
+         // Create user
+         const newUser = await User.create({ email, password: hashedPassword });
+         // await newUser.save();
+         const token = signToken(newUser);
+         console.log(token);
+         console.log("test");
+         return {token};
+       },
 
       addAppt: async (parent, args, context) => {
           console.log("resolvers.js", args, context);
@@ -77,22 +71,20 @@ const resolvers = {
          throw new AuthenticationError("You need to be logged in!");
       },
 
-      login: async (parent, { email, password }) => {
+      login: async (_, { email, password }) => {
+         // Find user by email
          const user = await User.findOne({ email });
-
-         if (!user) {
-            throw new AuthenticationError("Incorrect login credentials");
+         
+         // If user not found or password is incorrect, throw error
+         if (!user || !(await bcrypt.compare(password, user.password))) {
+           throw new Error('Invalid email or password');
          }
-
-         const correctPw = await user.isCorrectPassword(password);
-
-         if (!correctPw) {
-            throw new AuthenticationError("Incorrect login credentials");
-         }
-
+         
+         // Generate token
          const token = signToken(user);
-         return { token, user };
-      },
+         
+         return { token };
+       },
    },
 };
 

@@ -28,7 +28,6 @@ function App() {
       
 
       <CustomFooter />  {/* Footer should be at the bottom */}
-=======
       {/* Other components */}
       <CustomHeader />
       
