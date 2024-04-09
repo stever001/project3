@@ -1,0 +1,73 @@
+
+/* Updated CSS with "apptForm-" prefix for better specificity */
+.apptForm-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto;
+   width: 100%;
+   max-width: 400px;
+   padding: 2rem;
+   border-radius: 8px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+   backdrop-filter: blur(10px);
+   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto; /* Center the container itself */
+   width: 100%;
+   max-width: 400px; /* Adjust based on desired form width */
+   backdrop-filter: blur(10px);
+   background-color: rgba(255, 255, 255, 0.1);
+   padding: 2rem;
+   border-radius: 8px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+.apptForm-form {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   max-width: 400px;
+}
+} /* Add closing curly brace here */
+
+.apptForm-input,
+.apptForm-textarea {
+   padding: 8px;
+   margin-bottom: 10px;
+   border: 1px solid rgb(46, 10, 10);
+   border-radius: 9px;
+   font-size: 14px;
+}
+
+.apptForm-button {
+   padding: 10px 15px;
+   border: none;
+   border-radius: 4px;
+   background-color: #00bde3;
+   color: white;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+.apptForm-button:hover {
+   color: #0b0070;
+   background-color: #1cbed7;
+   transition: background-color 0.2s;
+}
+
+.apptForm-group {
+
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   margin-bottom: 1rem;
+}

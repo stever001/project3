@@ -29,12 +29,12 @@ const resolvers = {
             .select("-__v -password");
       },
 
-      // //* Get a User by username
-      // user: async (parent, { username }) => {
-      //    return User.findOne({ username }) //
-      //       .select("-__v -password");
-      // },
-      
+      //* Get a User by username
+      user: async (parent, { username }) => {
+         return User.findOne({ username }) //
+            .select("-__v -password");
+      },
+
       //* Get all appointments by username and date
       getAppointments: async (parent, { username }) => {
          return Appointment.find({ username: username }).sort({ date: 1 });
@@ -58,14 +58,10 @@ const resolvers = {
        },
 
       addAppt: async (parent, args, context) => {
-          console.log("resolvers.js", args, context);
+         console.log("resolvers.js", args, context);
          if (context.user) {
             const appointment = await Appointment.create({ ...args, username: context.user.username });
-            await User.findByIdAndUpdate(
-               { _id: context.user._id },
-               { $push: { appointments: appointment._id } },
-               { new: true }
-);
+            await User.findByIdAndUpdate({ _id: context.user._id }, { $push: { appointments: appointment._id } }, { new: true });
             return appointment;
          }
          throw new AuthenticationError("You need to be logged in!");
