@@ -6,6 +6,7 @@ import BackgroundSlider from "./components/BackgroundSlider/BackgroundSlider";
 import AboutUs from "./components/AboutUs/AboutUs";
 import LoginForm from "./components/auth/LoginForm"; // Corrected import path
 import Contact from "./components/Contact/Contact";
+import ListAppointment from "./components/ListAppointment/ListAppointment";
 // import SignupForm from './components/auth/SignupForm';
 // import AppointmentForm from "./components/AppointmentForm";
 import Appointment from "./components/Appointment/Appointment";
@@ -21,6 +22,7 @@ function App() {
          <Routes>
             <Route path="/" element={<HomeComponent />} />
             <Route path="/scheduleappt" element={<Appointment />} />
+            <Route path="/listappt" element={<ListAppointment />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/contact" element={<Contact />} />

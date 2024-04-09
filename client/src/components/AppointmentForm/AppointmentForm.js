@@ -1,4 +1,3 @@
-
 //* PLS DONT DELETE
 // import React, { useState } from "react";
 // import DatePicker from "react-datepicker";
@@ -70,6 +69,10 @@ const AppointmentForm = () => {
    const handleSubmit = (event) => {
       event.preventDefault();
       console.log(formData);
+      const formDataArray = [];
+      formDataArray.push(formData);
+      //************ Temporary use of localStorage until backend/frontend connection from Aaron is solved */
+      localStorage.setItem("appointments", JSON.stringify(formDataArray));
 
       // const [username, setUsername] = useState("");
       // const [apptDate, setApptDate] = useState("");
