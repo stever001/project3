@@ -1,4 +1,5 @@
-// Import necessary modules or dependencies
+// authRoutes.js
+
 const express = require('express');
 const router = express.Router();
 const { loginUser, signupUser } = require('../controllers/authController');
@@ -10,4 +11,7 @@ const { loginUser, signupUser } = require('../controllers/authController');
 // router.get('/check-auth-status', authController.checkAuthStatus);
 
 // Export the router
+// router.post('/login', loginUser);
+// router.post('/signup', signupUser);
+
 module.exports = router;

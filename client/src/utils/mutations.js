@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-// const { Date } = require("graphql-scalars");
 
 export const LOGIN_USER = gql`
 mutation Mutation($email: String!, $password: String!) {
