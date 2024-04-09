@@ -21,9 +21,15 @@ function ListAppointment() {
 
    console.log("data:", data);
 
+   const deleteAppointment = (username) => {
+      const updatedData = data.filter((item) => item.username !== username);
+      localStorage.setItem("appointments", JSON.stringify(updatedData));
+      setData(updatedData);
+   };
+   
    return (
       <div>
-         <h2>Current Appointments</h2>
+         <h2 className="header">Current Appointments</h2>
          <table className="table">
             <thead className="table-header">
                <tr>
@@ -38,6 +44,9 @@ function ListAppointment() {
                      <td>{item.username}</td>
                      <td>{item.apptDate}</td>
                      <td>{item.apptTime}</td>
+                     <td>
+                        <button onClick={() => deleteAppointment(item.username)}>Delete</button>
+                     </td>
                   </tr>
                ))}
             </tbody>

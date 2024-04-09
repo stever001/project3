@@ -61,11 +61,15 @@
    transition: background-color 0.2s;
 }
 
+.table {
+   background-color: aliceblue;
+}
+
 .table-header {
    padding-top: 12px;
    padding-bottom: 12px;
-   text-align: left;
-   background-color: #04aa6d;
+   text-align: center;
+   background-color: hsl(197, 95%, 34%);
    color: white;
 }
 
