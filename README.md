@@ -31,8 +31,8 @@ JWT_SECRET=mysecretkey
 This will allow connection to the servers.
 
 ## Usage
-Live URL:
-
+Live URL: https://project3-mp8o.onrender.com  
+GitHub Repository: https://github.com/stever001   
 
 ## License
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -48,4 +48,4 @@ Steven Rouse
 
 
 ## Questions
-For questions, contact steve17rouse@gmail.com. Visit [GitHub](https://github.com/stever001).. Visit [GitHub](https://github.com/stever001).
+For questions, contact steve17rouse@gmail.com. Visit [GitHub](https://github.com/stever001).
