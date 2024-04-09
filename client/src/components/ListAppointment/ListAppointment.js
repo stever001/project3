@@ -6,7 +6,7 @@ function ListAppointment() {
    return (
       <div className="list-appointment-wrapper">
          <div className="list-appointment-container">
-            <h2 className="list-appointment-heading">List of Appointments</h2> {/* Added class here */}
+            <h2 className="list-appointment-heading">Current Appointments</h2> {/* Added class here */}
             <ListAppointmentWrapper /> {/* Using ContactFormWrapper here */}
          </div>
       </div>
