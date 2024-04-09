@@ -1,12 +1,12 @@
 /* Styles specific to the Appointment component */
-.appointment-wrapper {
+.list-appointment-wrapper {
    margin-top: 200px;
    padding: 50px;
    text-align: center;
    position: relative;
 }
 
-.appointment-container {
+.list-appointment-container {
    border-radius: 8px;
    margin-bottom: 20px; /* Space between cards */
    padding: 20px;
@@ -19,7 +19,7 @@
    align-items: center; /* Added */
 }
 
-.appointment-heading {
+.list-appointment-heading {
    /* Updated class selector */
    color: rgb(2, 7, 18); /* Specific color */
    font-size: 4rem; /* Large heading size */

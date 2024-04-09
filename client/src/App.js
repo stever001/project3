@@ -22,7 +22,7 @@ function App() {
          <Routes>
             <Route path="/" element={<HomeComponent />} />
             <Route path="/scheduleappt" element={<Appointment />} />
-            <Route path="/listappt" element={<ListAppointment />} />
+            <Route path="/list-appt" element={<ListAppointment />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/contact" element={<Contact />} />
