@@ -55,50 +55,67 @@ import { CREATE_APPT } from "../../utils/mutations";
 import "./AppointmentForm.css";
 
 const AppointmentForm = () => {
-   const [username, setUsername] = useState("");
-   const [apptDate, setApptDate] = useState("");
-   const [apptTime, setApptTime] = useState("");
+   const [formData, setFormData] = useState({
+      username: "",
+      apptDate: "",
+      apptTime: "",
+   });
 
-   const [createAppointment] = useMutation(CREATE_APPT);
+   const handleChange = (event) => {
+      const { name, value } = event.target;
+      setFormData((prevState) => ({ ...prevState, [name]: value }));
+   };
 
-   const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-         await createAppointment({
-            variables: {
-               username,
-               apptDate,
-               apptTime,
-            },
-         });
-         // Clear form fields after successful submission
-         setUsername("");
-         setApptDate("");
-         setApptTime("");
-      } catch (error) {
-         console.error("Error creating appointment:", error);
-      }
+   const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(formData);
+
+      // const [username, setUsername] = useState("");
+      // const [apptDate, setApptDate] = useState("");
+      // const [apptTime, setApptTime] = useState("");
+
+      // const [createAppointment] = useMutation(CREATE_APPT);
+
+      // const handleSubmit = async (e) => {
+      //    e.preventDefault();
+      //    try {
+      //       await createAppointment({
+      //          variables: {
+      //             username,
+      //             apptDate,
+      //             apptTime,
+      //          },
+      //       });
+      //       // Clear form fields after successful submission
+      //       setUsername("");
+      //       setApptDate("");
+      //       setApptTime("");
+      //    } catch (error) {
+      //       console.error("Error creating appointment:", error);
+      //    }
    };
 
    return (
       <div className="af-container">
-         <div className="form-container">
-            <form onSubmit={handleSubmit}>
+         <form onSubmit={handleSubmit}>
+            <div className="form-group">
                <label>
                   Username:
-                  <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+                  <input type="text" name="username" value={formData.username} onChange={handleChange}></input>
                </label>
                <label>
                   Date:
-                  <input type="date" value={apptDate} onChange={(e) => setApptDate(e.target.value)} required />
+                  <input type="date" name="apptDate" value={formData.apptDate} onChange={handleChange}></input>
+                  {/* <input type="date" name="apptDate" value={apptDate}nChange={(e) => setApptDate(e.target.value)} required /> */}
                </label>
                <label>
                   Time:
-                  <input type="time" value={apptTime} onChange={(e) => setApptTime(e.target.value)} required />
+                  <input type="time" name="apptTime" value={formData.apptTime} onChange={handleChange}></input>
+                  {/* <input type="time" value={apptTime} onChange={(e) => setApptTime(e.target.value)} required /> */}
                </label>
-               <button type="submit">Create Appointment</button>
-            </form>
-         </div>
+               <input type="submit" value="Create Appointment" />
+            </div>
+         </form>
       </div>
    );
 };

@@ -22,7 +22,7 @@ const { User, Appointment } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 
 //* Import json web token stuff
-const { signToken } = require("../utils/authUtils");
+const { generateToken } = require("../utils/authUtils");
 
 const resolvers = {
    Query: {
@@ -58,19 +58,21 @@ const resolvers = {
    Mutation: {
       addUser: async (parent, args) => {
          const user = await User.create(args);
-         const token = signToken(user);
+         const token = generateToken(user);
 
          return { token, user };
       },
 
       addAppt: async (parent, args, context) => {
-         console.log("resolvers.js", args, context);
-         if (context.user) {
-            const appointment = await Appointment.create({ ...args, username: context.user.username });
-            await User.findByIdAndUpdate({ _id: context.user._id }, { $push: { appointments: appointment._id } }, { new: true });
-            return appointment;
-         }
-         throw new AuthenticationError("You need to be logged in!");
+         console.log("resolvers.js", args, context.user);
+         // if (!context.user) {
+         // throw new AuthenticationError("You need to be logged in!");
+         // }
+         // if (context.user) {
+         const appointment = await Appointment.create({ ...args });
+         await User.findByIdAndUpdate({ _id: args.userId }, { $push: { appointments: appointment._id } }, { new: true });
+         return appointment;
+         // }
       },
 
       login: async (parent, { email, password }) => {
@@ -86,7 +88,7 @@ const resolvers = {
             throw new AuthenticationError("Incorrect login credentials");
          }
 
-         const token = signToken(user);
+         const token = generateToken(user);
          return { token, user };
       },
    },

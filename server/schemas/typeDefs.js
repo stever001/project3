@@ -14,6 +14,7 @@ const typeDefs = gql`
    }
    type Appointment {
       _id: ID
+      userId: String
       username: String
       apptDate: Date
       apptTime: String
@@ -30,7 +31,7 @@ const typeDefs = gql`
    type Mutation {
       login(email: String!, password: String!): Auth
       addUser(username: String!, email: String!, password: String!): Auth
-      addAppt(username: String, apptDate: Date!, apptTime: String!, confirmed: Boolean!): Appointment
+      addAppt(userId: String!, username: String, apptDate: Date!, apptTime: String!, confirmed: Boolean!): Appointment
    }
 
    type Auth {
