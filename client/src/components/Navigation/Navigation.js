@@ -14,6 +14,9 @@ const Navigation = () => {
                <Link to="/scheduleappt">Schedule an Appointment</Link>
             </li>
             <li>
+               <Link to="/listappt">List of Appointments</Link>
+            </li>
+            <li>
                <Link to="/about-us">About Us</Link>
             </li>
             <li>
